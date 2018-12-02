@@ -252,7 +252,7 @@ wpgpGetCountryDataset <- function(ISO3=NULL,
   }
   
   file_remote <-  as.character(df.filtered$PathToRaster)
-  file_local <- paste0(destDir,'/', ISO3,"_",covariate,'.tif')
+  file_local <- paste0(destDir,'/', tolower(ISO3),"_",covariate,'.tif')
   
   ftpReturn <- wpgpDownloadFileFromFTP(file_remote, file_local, quiet=quiet, method=method)
   
