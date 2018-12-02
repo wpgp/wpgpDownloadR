@@ -1,0 +1,13 @@
+Package: wpgpDownloadR
+Type: Package
+Title: wpgpDownloadR Package for downloading raster datasets from WorldPop FTP
+Version: 0.1.0
+Author: Maksym Bondarenko and Chris Jochem <W.C.Jochem@soton.ac.uk>
+Maintainer: The package maintainer <mb4@soton.ac.uk>
+Depends: R (>= 3.2.0), RCurl
+Description: wpgpDownloadR Package for downloading raster datasets from WorldPop FTP server
+License: GPL
+Encoding: UTF-8
+LazyData: true
+DatasetSum: 65c81a4ac0c9acd5b372d574c8e75d2b
+RoxygenNote: 6.1.1
