@@ -29,5 +29,5 @@ dataframe
 wpgpGetPOPTable function will download a population csv
 }
 \examples{
-wpgpGetPOPTable("AGO",2000,"E:/WorldPop/")
+wpgpGetPOPTable("ABW",2000,"E:/WorldPop/")
 }

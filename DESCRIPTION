@@ -9,5 +9,5 @@ Description: wpgpDownloadR Package for downloading raster datasets from WorldPop
 License: GPL
 Encoding: UTF-8
 LazyData: true
-DatasetSum: e169744a9e84120230f916a73fd8a658
+DatasetSum: 65c81a4ac0c9acd5b372d574c8e75d2b
 RoxygenNote: 6.1.1

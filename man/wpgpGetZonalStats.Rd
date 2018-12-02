@@ -32,5 +32,5 @@ dataframe
 wpgpGetZonalStats function will download a ZonalStats csv
 }
 \examples{
-wpgpGetZonalStats(ISO3="ABW", covariate="ccilc_dst011_2000", destDir="E:/WorldPop/", stat="mean")
+wpgpGetZonalStats(ISO3="ABW", covariate="esaccilc_dst011_100m_2000", destDir="E:/WorldPop/", stat="mean")
 }

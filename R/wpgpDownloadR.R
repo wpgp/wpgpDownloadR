@@ -176,10 +176,11 @@ wpgpListCountries <- function(quiet=TRUE) {
 
 
 
-#' wpgpListCountryCovariates function will return a data frame of
+#' wpgpListCountryDatasets function will return a data frame of
 #' avalible covariates for a country
 #' @param ISO3 a 3-character country code or vector of country codes
 #' @rdname wpgpListCountryDatasets
+#' @param quiet Download Without any messages if TRUE
 #' @return Dataframe
 #' @export
 #' @examples
@@ -280,7 +281,7 @@ wpgpGetCountryDataset <- function(ISO3=NULL,
 #' @return dataframe
 #' @export
 #' @examples
-#' wpgpGetPOPTable("AGO",2000,"E:/WorldPop/")
+#' wpgpGetPOPTable("ABW",2000,"E:/WorldPop/")
 wpgpGetPOPTable <- function(ISO3=NULL,
                             year=NULL,
                             destDir=tempdir(),
@@ -337,7 +338,7 @@ wpgpGetPOPTable <- function(ISO3=NULL,
 #' @return dataframe
 #' @export
 #' @examples
-#' wpgpGetZonalStats(ISO3="ABW", covariate="ccilc_dst011_2000", destDir="E:/WorldPop/", stat="mean")
+#' wpgpGetZonalStats(ISO3="ABW", covariate="esaccilc_dst011_100m_2000", destDir="E:/WorldPop/", stat="mean")
 wpgpGetZonalStats <- function(ISO3=NULL,
                               covariate=NULL,
                               stat='mean',
@@ -349,12 +350,7 @@ wpgpGetZonalStats <- function(ISO3=NULL,
   if (!dir.exists(destDir)) stop( paste0("Please check destDir exists: ", destDir))
   if (is.null(ISO3))  stop("Error: Enter country ISO3" )
   if (is.null(covariate)) stop("Error: Enter covariate" )
-  
-  ISO3="ABW"
-  covariate="ccilc_dst011_2000"
-  destDir="E:/WorldPop/"
-  stat="mean"
-  
+ 
   ISO3 <- toupper(ISO3)
   covariate <- tolower(covariate)
   stat <- tolower(stat)

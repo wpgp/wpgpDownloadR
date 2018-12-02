@@ -2,19 +2,21 @@
 % Please edit documentation in R/wpgpDownloadR.R
 \name{wpgpListCountryDatasets}
 \alias{wpgpListCountryDatasets}
-\title{wpgpListCountryCovariates function will return a data frame of
+\title{wpgpListCountryDatasets function will return a data frame of
 avalible covariates for a country}
 \usage{
 wpgpListCountryDatasets(ISO3 = NULL, quiet = TRUE)
 }
 \arguments{
 \item{ISO3}{a 3-character country code or vector of country codes}
+
+\item{quiet}{Download Without any messages if TRUE}
 }
 \value{
 Dataframe
 }
 \description{
-wpgpListCountryCovariates function will return a data frame of
+wpgpListCountryDatasets function will return a data frame of
 avalible covariates for a country
 }
 \examples{
