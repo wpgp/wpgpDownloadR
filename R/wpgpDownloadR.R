@@ -367,8 +367,9 @@ wpgpGetZonalStats <- function(ISO3=NULL,
   filenames <- strsplit(filenames, "\r\n")[[1]]
 
   if (!file_zst %in% filenames ){
-    stop( paste0("Entered Covariates: ", paste(covariate, collapse=", ")," does not have zonal stats present 
-                 in WP or ZonalStats was not calcualted. Please check name of the dataset"))
+    print( paste0("Entered Covariates: ", paste(covariate, collapse=", ")," does not have zonal stats present 
+                 in WP or ZonalStats was not calcualted."))
+    return(NULL)
   }  
   
   file_remote <- paste0('GIS/ZonalStatistics/Global_2000_2020/',
@@ -400,4 +401,43 @@ wpgpGetZonalStats <- function(ISO3=NULL,
   
 }
 
+
+
+#' wpgpGetAvalZonalStats function will return a List of ZonalStats
+#  avalible for the ISO on WorldPop ftp server
+#' @param ISO3 a 3-character country code
+#' @param stat Either as character: 'mean', 'sum'.
+#' @param quiet Download Without any messages if TRUE
+#' @param method Method to be used for downloading files. Current download methods
+#' are "internal", "wininet" (Windows only) "libcurl", "wget" and
+#' "curl", and there is a value "auto"
+#' @rdname wpgpGetAvalZonalStats
+#' @return list
+#' @export
+#' @examples
+#' wpgpGetAvalZonalStats(ISO3="ABW")
+wpgpGetAvalZonalStats <- function(ISO3=NULL,
+                              stat='mean',
+                              quiet=TRUE,
+                              method="auto") {
+  
+
+  if (is.null(ISO3))  stop("Error: Enter country ISO3" )
+
+  ISO3 <- toupper(ISO3)
+  stat <- tolower(stat)
+  
+  if (!stat %in% c('mean','sum')){
+    stop("Error: Enter stat, either: 'mean', 'sum'" )
+  }
+  
+  #main WorldPop FTP directory with documentation
+  url <- paste0('ftp://ftp.worldpop.org.uk/GIS/ZonalStatistics/Global_2000_2020/',ISO3,'/',stat,'/')
+  
+  filenames <- RCurl::getURL( url , dirlistonly=T )
+  filenames <- strsplit(filenames, "\r\n")[[1]]
+  
+  return(filenames)
+  
+}
 
